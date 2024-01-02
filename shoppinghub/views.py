@@ -47,6 +47,9 @@ def search(request):
 def about(request):
     return render(request, 'shoppinghub/about.html')
 
+def history(request):
+    return render(request, 'shoppinghub/history.html')
+
 def contact(request):
     if request.method=="POST":
         name=request.POST.get('name', '')
@@ -100,7 +103,7 @@ def checkout(request):
         update.save()
         thank = True
         id = order.order_id
-       # return render(request, 'shoppinghub/checkout.html', {'thank':thank, 'id': id})
+       ## return render(request, 'shoppinghub/checkout.html', {'thank':thank, 'id': id})
         # Request paytm to transfer the amount to your account after payment by user
         param_dict = {
                 'MID': 'qofSlN69628291597132D',#enter valid merchant ID
@@ -114,7 +117,7 @@ def checkout(request):
         }
         param_dict['CHECKSUMHASH'] = Checksum.generate_checksum(param_dict, MERCHANT_KEY)
         return render(request, 'shoppinghub/paytm.html', {'param_dict': param_dict})
-    return render(request, 'shoppinghub/checkout.html')
+    return render(request, 'shoppinghub/checkout.html')##
 
 @csrf_exempt
 def handlerequest(request):
@@ -130,7 +133,9 @@ def handlerequest(request):
      if verify:
         if response_dict['RESPCODE'] == '01':
             print('order successful')
+
         else:
             print('order was not successful because' + response_dict['RESPMSG'])
-    return render(request, 'paymentstatus.html', {'response': response_dict})
+    return render(request, 'shoppinghub/paymentstatus.html', {'response': response_dict})
+
 

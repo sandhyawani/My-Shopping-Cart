@@ -10,6 +10,7 @@ margin-left:-4px;
 
 .carousel-indicators .active {
 background-color: blue;
+
   }
 
 .col-md-3 img{
@@ -38,7 +39,9 @@ padding-top: 222px;
  padding-right: 0;
 
  }
-
+ body .carousel-indicators{
+  bottom:-25px;
+  }
 {% endblock %}
 {% block body %}
 {% load static %}
@@ -60,10 +63,11 @@ padding-top: 222px;
         {% for i in product %}
         <div class="col-xs-3 col-sm-3 col-md-3">
           <div class="card align-items-center" style="width: 17rem;">
-            <img src='/media/{{i.image}}' class="card-img-top" alt="...">
+            <img src='/media/{{i.image}}'class="card-img-top"alt="...">
             <div class="card-body">
               <h5 class="card-title" id="namepr{{i.id}}">{{i.product_name|slice:"0:18"}}...</h5> 
               <strong class="card-title" >₹ <span id="pricepr{{i.id}}">{{i.price}}</span></strong>
+              
               <p class="card-text">{{i.highlight|slice:"0:46"}}...</p> 
               <span id="divpr{{i.id}}" class="divpr">
                 <button id="pr{{i.id}}" class="btn btn-warning cart">Add To Cart</button>

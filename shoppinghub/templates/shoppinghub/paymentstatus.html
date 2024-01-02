@@ -1,0 +1,22 @@
+{% extends 'shoppinghub/basic.html' %}
+{% block title%} My Shopping Cart {% endblock %}
+{% block body %}
+<div class="container">
+    <div class="col my-4">
+        <h2>Payment status regarding your order Id {{ response.ORDERID }}</h2>
+        {% if response.RESPCODE == '01' %}
+            ORDER SUCCESS
+        {% else %}
+            ORDER FAILURE
+        {% endif %}
+    </div>
+    <div class="col">
+        <h3>Response Details:</h3>
+        <pre>{{ response|pprint }}</pre>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+{% endblock %}
+
+

@@ -23,7 +23,10 @@ from.import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('shoppinghub/',include('shoppinghub.urls')),
-    path('blog/',include('blog.urls')),
+  #  path('blog/',include('blog.urls')),
     path('', views.index,name='Home')
 
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+
+

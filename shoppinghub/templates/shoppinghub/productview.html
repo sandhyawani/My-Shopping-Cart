@@ -1,13 +1,14 @@
 {% extends 'shoppinghub/basic.html' %} 
-
-
+{% block title%} My Shopping Cart  productview{% endblock %}
 {%block css%}
 .grayhead{
   color:gray;
+  font-weight: bold;
 }
 .price{
   font-size:30px;
-  padding:40px 0px 10px 10px;
+  padding:20px 0px 10px 10px;
+  color:black;
 }
 {% endblock%}
 
@@ -18,12 +19,10 @@
     <div class="row">
         <img clas="img" src="/media/{{prod.image}}"style="object-fit:contain; width:400px; height:550px; padding:33px 79px 10px 2px;">
     </div>
-     
     </div>
-
     <div class="col-md-6">
       <h4>{{prod.product_name}}</h4>
-      <p class="price"><b> ₹.{{prod.price}}</b></p>
+      <p class="grayhead">Product Price :<br><b class="price"> ₹.{{prod.price}}</b></p>
       <p> <h6 class="grayhead">Highlight :</h6> {{prod.highlight}}</p>
       <p> <h6 class="grayhead">Description:</h6> {{prod.description}}</p>
       <p> <h6 class="grayhead">More-Info:</h6> {{prod.More_info}}</p>
@@ -32,10 +31,6 @@
     </div>
 </div>
 {% endblock %}
-
-
-
-
 {% block js %}
 <script>
 console.log('working');
@@ -64,7 +59,5 @@ document.getElementById('cart').innerHTML = Object.keys(cart).length;
 });
 $('#popcart').popover();
 document.getElementById("popcart").setAttribute('data-content', '<h5>Cart for your items in my shopping cart</h5>');
-
-
 </script>
 {% endblock %}

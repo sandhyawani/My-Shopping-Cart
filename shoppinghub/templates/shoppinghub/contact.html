@@ -1,5 +1,4 @@
 {% extends 'shoppinghub/basic.html' %} 
-
 {% block title %} Contact Us {% endblock %}
 {%block css%}
 body{
@@ -9,7 +8,6 @@ body{
 {% block body %}
  <div class="container my-4">
      <h3>Contact Us</h3>
-
      <form action="/shoppinghub/contact/" method="post">{% csrf_token %}
   <div class="form-group">
     <label for="name">Name :</label>
@@ -32,6 +30,5 @@ body{
   <button type="submit" class="btn btn-info">Submit</button>
 
 </form>
-
 {% endblock %}
 
