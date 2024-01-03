@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 
-=======
-# My Shopping  Cart
+# My Shopping Cart
  This is My django project
->>>>>>> e911faab1b011cf1c539d2a204e64a0cf2c0800a
+A Django shopping cart project featuring product management, a search bar, contact page, and a streamlined checkout process. Developed using Django, HTML, CSS, Javascript, Python and Bootstrap for a clean and efficient user experience.
